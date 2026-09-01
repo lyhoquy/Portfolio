@@ -1,13 +1,20 @@
 @import "tailwindcss";
 
-/* Provisional visual direction for the draft: neutral ink, paper, and lime accent. */
+/* After the Rain theme: deep sky, cloud paper, wet city, and sunlight. */
 :root {
-  --paper: #f3f1eb;
-  --ink: #171815;
-  --muted: #6b6c64;
-  --line: #d2d0c7;
-  --accent: #d8f36b;
-  --panel: #e8e6de;
+  --sky: #123b62;
+  --night: #0b1827;
+  --cloud: #f4f7f8;
+  --mist: #dce6ea;
+  --rain-text: #607283;
+  --sunlight: #f3c969;
+  --wet-city: #29485c;
+  --paper: var(--cloud);
+  --ink: var(--night);
+  --muted: var(--rain-text);
+  --line: var(--mist);
+  --accent: var(--sunlight);
+  --panel: var(--mist);
 }
 
 @theme inline {
@@ -23,7 +30,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 a { color: inherit; text-decoration: none; }
 a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
@@ -299,4 +306,75 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 @media (max-width: 760px) {
   .section-heading-work { margin-bottom: 45px; }
   .contact-section .act-label { margin-bottom: 35px; }
+}
+
+
+/* After the Rain act rhythm: rain-dark opening, clear work, mist process, sunlight close. */
+.hero {
+  background: var(--sky);
+  color: var(--cloud);
+  border-bottom-color: rgb(244 247 248 / 24%);
+}
+.hero .act-label,
+.hero .identity-line,
+.hero-lede,
+.hero-note { color: rgb(244 247 248 / 72%); }
+.hero h1 span { color: rgb(244 247 248 / 68%); }
+.hero-placeholder { background: var(--wet-city); }
+.hero .button-primary { background: var(--sunlight); color: var(--night); border-color: var(--sunlight); }
+.hero .button-primary:hover { background: #f8d98d; }
+.hero .button-secondary { border-color: rgb(244 247 248 / 58%); color: var(--cloud); }
+.hero .button-secondary:hover { background: rgb(244 247 248 / 12%); }
+.hero .status-dot { background: var(--sunlight); }
+
+.work-section { background: var(--cloud); }
+.featured-project { border-color: var(--wet-city); }
+.project-visual-featured { background: var(--sunlight); }
+.project-card { background: rgb(255 255 255 / 42%); }
+.project-visual { background: var(--mist); }
+.project-visual-featured .visual-grid { opacity: .45; }
+.tag { background: var(--sunlight); color: var(--night); }
+
+.process-section { background: var(--mist); }
+.process-list { border-top-color: var(--wet-city); }
+.process-step { border-bottom-color: rgb(41 72 92 / 24%); border-right-color: rgb(41 72 92 / 24%); }
+.process-step:last-child { border-right-color: transparent; }
+.experience-insert { border-top-color: var(--wet-city); }
+
+.about-section { background: var(--cloud); }
+.toolkit-block { border-top-color: var(--mist); }
+
+.contact-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--night);
+  color: var(--cloud);
+  border-bottom-color: rgb(244 247 248 / 24%);
+}
+.contact-section::before {
+  position: absolute;
+  top: -260px;
+  left: 50%;
+  width: min(760px, 100vw);
+  height: 520px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, rgb(243 201 105 / 22%) 0%, transparent 68%);
+  content: "";
+  pointer-events: none;
+}
+.contact-section > * { position: relative; }
+.contact-section .act-label,
+.contact-copy,
+.contact-links,
+.contact-closing { color: rgb(244 247 248 / 68%); }
+.contact-section .button-primary { background: var(--sunlight); color: var(--night); border-color: var(--sunlight); }
+.contact-section .button-primary:hover { background: #f8d98d; }
+.contact-links a:hover { color: var(--cloud); }
+.contact-section .resume-note { color: rgb(244 247 248 / 42%); }
+
+.site-footer { background: var(--cloud); }
+
+@media (max-width: 760px) {
+  .hero { background: var(--sky); }
+  .process-step { border-bottom-color: rgb(41 72 92 / 24%); }
 }
