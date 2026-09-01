@@ -22,17 +22,19 @@ Coding agents must read this document before modifying any protected product or 
 
 ### Professional Positioning
 
-**UI/UX Designer & Developer**
+**Frontend Developer**
 
-The portfolio should communicate a hybrid profile:
+The portfolio should communicate Ly's ability to:
 
-* Design thinking
-* User-centered problem solving
-* Visual and interaction design
-* Frontend development
-* Ability to bridge design and implementation
+* build modern, responsive web interfaces;
+* use HTML, CSS, JavaScript, and relevant frontend frameworks when actually used;
+* develop reusable, component-based interfaces;
+* turn designs or requirements into working products;
+* use Git and deployment workflows where demonstrated.
 
-The portfolio should not position Ly solely as a visual designer or solely as a developer.
+UI/UX is a supporting direction: Ly is actively learning UI/UX and product design to improve how interfaces feel and work. The portfolio must not present Ly as a professional UI/UX Designer or Product Designer without corresponding proof.
+
+The portfolio should not claim Full-stack Developer, AI Engineer, or other stronger positioning without sufficient evidence.
 
 ---
 
@@ -53,20 +55,33 @@ The website should prioritize clarity, credibility, and evidence over decorative
 
 ## 4. Primary Audience
 
-The primary audience may include:
+The primary audience is:
 
-* Recruiters
-* Hiring managers
-* Design leads
-* Product teams
-* Potential collaborators
-* Clients or project partners
+* Recruiters and hiring managers hiring Frontend Developer Interns or Juniors;
+* Recruiters and hiring managers hiring Web Developer Interns or Software Engineer Interns with a frontend focus.
+
+Secondary audiences include frontend developers and technical interviewers who want to evaluate code structure, component architecture, responsive implementation, data handling, API integration, performance, Git, deployment, and technical decisions. Designers and product people may evaluate visual awareness and user-flow understanding, but the portfolio does not need to prove that Ly is a designer.
 
 The interface should remain understandable to someone who does not already know Ly or Kiandas.
 
 ---
 
-## 5. Design Principles
+## 5. Homepage Goal and Conversion Flow
+
+Within approximately ten seconds, the homepage should make clear:
+
+1. **Who:** Ly Ho is a Frontend Developer.
+2. **What:** Ly builds modern, responsive, functional web interfaces.
+3. **With what:** only technologies Ly has actually used, such as React, Next.js, TypeScript, or JavaScript.
+4. **Proof:** projects are visible immediately.
+
+The intended visitor flow is:
+
+**Understand → Verify → Explore → Contact**
+
+The primary call to action is **View Projects**. The secondary call to action is **View Resume**. GitHub, LinkedIn, and Contact are supporting links and should not all be presented as equally prominent primary buttons.
+
+## 6. Design Principles
 
 The portfolio should prioritize:
 
@@ -103,7 +118,7 @@ Visual quality must not come at the cost of unnecessary page weight or poor inte
 
 ---
 
-## 6. Visual Identity
+## 7. Visual Identity
 
 The final visual system has not yet been fully locked unless explicitly documented elsewhere.
 
@@ -123,7 +138,7 @@ Temporary implementation values must be clearly identifiable as provisional.
 
 ---
 
-## 7. Content Rules
+## 8. Content Rules
 
 Content must be based on information explicitly provided by the owner or approved project material.
 
@@ -148,7 +163,7 @@ Do not turn assumptions into facts.
 
 ---
 
-## 8. Case Study Rules
+## 9. Case Study Rules
 
 Case studies should emphasize the process and reasoning behind the work.
 
@@ -174,7 +189,7 @@ A visually impressive case study with fabricated evidence is worse than an incom
 
 ---
 
-## 9. Information Architecture
+## 10. Information Architecture
 
 The exact final information architecture should be treated as a product decision.
 
@@ -192,7 +207,7 @@ Avoid creating routes merely because the framework makes them easy to create.
 
 ---
 
-## 10. UX Interaction Rules
+## 11. UX Interaction Rules
 
 Interactions should have a clear purpose.
 
@@ -217,7 +232,7 @@ Respect user preferences such as reduced motion.
 
 ---
 
-## 11. Responsive Design
+## 12. Responsive Design
 
 The portfolio must work across:
 
@@ -243,7 +258,7 @@ according to available space.
 
 ---
 
-## 12. Content Status
+## 13. Content Status
 
 Content should be treated as one of three states:
 
@@ -263,7 +278,7 @@ Agents must not silently convert Draft or Missing content into Approved content.
 
 ---
 
-## 13. Reference Material
+## 14. Reference Material
 
 Historical portfolio material may be stored in:
 
@@ -277,7 +292,7 @@ When migrating old content, preserve factual accuracy and distinguish historical
 
 ---
 
-## 14. Decision Authority
+## 15. Decision Authority
 
 The human owner has final authority over:
 
@@ -293,7 +308,7 @@ Agents may recommend alternatives, but recommendations must be presented as reco
 
 ---
 
-## 15. Change Rule
+## 16. Change Rule
 
 If a requested change conflicts with this document:
 
