@@ -3,10 +3,11 @@
 import { useState } from "react";
 
 const links = [
-  { href: "#work", label: "Projects" },
+  { href: "#projects", label: "Projects" },
+  { href: "#how-i-build", label: "How I build" },
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
+  { href: "#resume", label: "Resume" },
 ];
 
 export function MobileNav() {

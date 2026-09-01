@@ -1,6 +1,7 @@
-import { About, Experience, Skills } from "@/components/portfolio/profile-sections";
+import { HowIBuild } from "@/components/portfolio/how-i-build";
 import { Contact, Footer } from "@/components/portfolio/contact";
 import { Hero, SiteNav } from "@/components/portfolio/hero";
+import { About } from "@/components/portfolio/profile-sections";
 import { Projects } from "@/components/portfolio/projects";
 import { projects } from "@/lib/portfolio-data";
 
@@ -12,9 +13,8 @@ export default function Home() {
       <div id="top" className="page-shell">
         <Hero />
         <Projects projects={projects} />
+        <HowIBuild />
         <About />
-        <Experience />
-        <Skills />
         <Contact />
       </div>
       <Footer />

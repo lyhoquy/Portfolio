@@ -20,13 +20,15 @@ function ProjectVisual({ project, featured = false }: { project: Project; featur
 }
 
 function ProjectActions({ project }: { project: Project }) {
+  const isSupporting = project.slug === "personal-portfolio";
+
   return (
     <div className="project-actions">
       <Link className="text-link" href={`/projects/${project.slug}`}>
-        Case study <span aria-hidden="true">↗</span>
+        {isSupporting ? "Project notes" : "Read case study"} <span aria-hidden="true">↗</span>
       </Link>
       <a className="text-link text-link-muted" href={project.href} target="_blank" rel="noreferrer">
-        Source code <span aria-hidden="true">↗</span>
+        View source code <span aria-hidden="true">↗</span>
       </a>
     </div>
   );
@@ -57,11 +59,12 @@ export function Projects({ projects }: ProjectsProps) {
   const selected = projects.filter((project) => project.slug !== featured.slug);
 
   return (
-    <section id="work" className="section work-section" aria-labelledby="work-title">
+    <section id="projects" className="section work-section cinematic-act" aria-labelledby="work-title">
+      <div className="act-label">ACT 02 / THE WORK</div>
       <div className="section-heading">
-        <p className="eyebrow">Projects</p>
-        <h2 id="work-title">Selected projects I&apos;ve built.</h2>
-        <p>A focused collection of frontend work, academic projects, and experiments.</p>
+        <p className="eyebrow">Selected projects</p>
+        <h2 id="work-title">Things I built to make ideas work.</h2>
+        <p>A focused selection of frontend, realtime, and computer-vision work. Each project shows a different way I turn requirements into a working experience.</p>
       </div>
       <article className="featured-project project-card">
         <ProjectVisual project={featured} featured />
@@ -73,7 +76,7 @@ export function Projects({ projects }: ProjectsProps) {
       </div>
       <div className="project-list">
         {selected.map((project) => (
-          <article className="project-card" key={project.number}>
+          <article className={`project-card ${project.slug === "personal-portfolio" ? "project-card-supporting" : ""}`} key={project.number}>
             <ProjectVisual project={project} />
             <ProjectDetails project={project} />
           </article>

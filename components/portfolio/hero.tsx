@@ -1,5 +1,5 @@
-import { profile } from "@/lib/portfolio-data";
 import { MobileNav } from "@/components/portfolio/mobile-nav";
+import { profile } from "@/lib/portfolio-data";
 
 export function SiteNav() {
   return (
@@ -9,9 +9,9 @@ export function SiteNav() {
         <span>{profile.brand}</span>
       </a>
       <div className="nav-links">
-        <a href="#work">Projects</a>
+        <a href="#projects">Projects</a>
+        <a href="#how-i-build">How I build</a>
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </div>
       <MobileNav />
@@ -24,24 +24,24 @@ export function SiteNav() {
 
 export function Hero() {
   return (
-    <section className="hero" aria-labelledby="hero-title">
+    <section className="hero cinematic-act" aria-labelledby="hero-title">
+      <div className="act-label">ACT 01 / THE SKY</div>
       <div className="hero-intro">
         <div className="hero-copy-block">
-          <p className="eyebrow">{profile.name} / {profile.role}</p>
+          <p className="eyebrow">{profile.name} · {profile.role}</p>
           <h1 id="hero-title">
-            Frontend interfaces
-            <span>built for real use.</span>
+            I build interfaces
+            <span>that connect ideas to real use.</span>
           </h1>
           <p className="hero-lede">
-            I build responsive interfaces that connect frontend experiences with
-            realtime systems and computer-vision features.
+            I build responsive web interfaces and connect them to the systems that make products useful — from realtime traffic information to computer-vision features.
           </p>
           <div className="hero-actions" aria-label="Hero actions">
-            <a className="button button-primary" href="#work">
-              View selected projects <span aria-hidden="true">↓</span>
+            <a className="button button-primary" href="#projects">
+              See my work <span aria-hidden="true">↓</span>
             </a>
-            <a className="button button-secondary" href={`mailto:${profile.email}`}>
-              Contact me <span aria-hidden="true">↗</span>
+            <a className="button button-secondary" href="#resume">
+              View resume <span aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
@@ -53,7 +53,7 @@ export function Hero() {
       </div>
       <div className="hero-note">
         <span className="status-dot" aria-hidden="true" />
-        React · TypeScript · responsive UI
+        React · TypeScript · realtime interfaces
       </div>
     </section>
   );

@@ -218,3 +218,39 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
   .mobile-nav-menu a:hover { background: var(--accent); }
   .nav-resume { font-size: 11px; }
 }
+
+
+/* Cinematic copy pass: structure first, visual treatment remains provisional. */
+.cinematic-act { position: relative; }
+.act-label { margin-bottom: 30px; color: var(--muted); font: 10px/1.4 var(--font-geist-mono), monospace; letter-spacing: .12em; text-transform: uppercase; }
+#projects, #how-i-build, #about, #contact { scroll-margin-top: 20px; }
+.process-section { padding-top: 125px; }
+.process-list { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--ink); }
+.process-step { min-height: 235px; padding: 24px 18px 24px 0; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); }
+.process-step:not(:first-child) { padding-left: 18px; }
+.process-step:last-child { border-right: 0; }
+.process-step h3 { margin: 0 0 22px; font-size: 17px; font-weight: 500; letter-spacing: -.03em; }
+.process-step p { max-width: 170px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+.experience-insert { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; margin-top: 100px; border-top: 1px solid var(--ink); padding-top: 28px; }
+.experience-insert h3 { margin: 0; font-size: 38px; font-weight: 500; letter-spacing: -.06em; line-height: 1; }
+.experience-title { margin: 0 0 8px; font-size: 20px; }
+.experience-summary { max-width: 430px; margin: 26px 0 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.process-note { max-width: 450px; margin: 70px 0 0 auto; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.toolkit-block { grid-column: 1 / -1; margin-top: 125px; border-top: 1px solid var(--line); padding-top: 80px; }
+.toolkit-block .section-heading { margin-bottom: 45px; }
+.project-card-supporting { opacity: .82; }
+.project-card-supporting:hover { opacity: 1; }
+.contact-closing { margin: 62px auto 0; color: var(--muted); font: 11px var(--font-geist-mono), monospace; }
+
+@media (max-width: 760px) {
+  .act-label { margin-bottom: 22px; }
+  .process-section { padding-top: 85px; }
+  .process-list { display: block; }
+  .process-step, .process-step:not(:first-child) { min-height: auto; padding: 20px 0; border-right: 0; }
+  .process-step h3 { margin-bottom: 10px; }
+  .process-step p { max-width: 100%; }
+  .experience-insert { display: block; margin-top: 65px; }
+  .experience-insert > div:last-child { margin-top: 35px; }
+  .toolkit-block { margin-top: 85px; padding-top: 55px; }
+  .contact-closing { margin-top: 48px; }
+}
