@@ -6,9 +6,7 @@ export function Contact() {
       <div className="act-label">ACT 05 / CONTACT</div>
       <p className="eyebrow">Have something worth building?</p>
       <h2 id="contact-title">Let&apos;s make it useful.</h2>
-      <p className="contact-copy">
-        I am open to frontend opportunities, collaborations, and thoughtful conversations about building for the web.
-      </p>
+      <p className="contact-copy">I am open to frontend opportunities, collaborations, and thoughtful conversations about the web.</p>
       <a className="button button-primary" href={`mailto:${profile.email}`}>
         Start a conversation <span aria-hidden="true">↗</span>
       </a>

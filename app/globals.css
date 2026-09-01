@@ -254,3 +254,31 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
   .toolkit-block { margin-top: 85px; padding-top: 55px; }
   .contact-closing { margin-top: 48px; }
 }
+
+
+/* Hierarchy pass: one dominant headline, supporting copy, then metadata. */
+.act-label { grid-column: 1 / -1; margin-bottom: 16px; opacity: .72; }
+.section-supporting-copy { max-width: 260px; margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.section-heading h2 { max-width: 620px; }
+.project-description { color: var(--ink); font-size: 17px; }
+.project-role { font-size: 12px; }
+.project-role strong { font: 10px var(--font-geist-mono), monospace; letter-spacing: .08em; text-transform: uppercase; }
+.project-status { opacity: .8; }
+.about-section { grid-template-columns: 1fr 1fr; }
+.about-section .about-intro { grid-column: 1; }
+.about-section .about-copy { grid-column: 2; }
+.toolkit-block { grid-column: 1 / -1; }
+.process-heading { margin-bottom: 45px; }
+.process-heading .eyebrow { margin-bottom: 15px; }
+.contact-section .act-label { text-align: left; }
+.contact-section .eyebrow { margin-bottom: 18px; }
+.contact-copy { font-size: 15px; }
+.resume-note { font-size: 10px; }
+
+@media (max-width: 760px) {
+  .act-label { margin-bottom: 18px; }
+  .about-section .about-intro, .about-section .about-copy { grid-column: auto; }
+  .section-supporting-copy { max-width: 100%; }
+  .project-description { font-size: 16px; }
+  .contact-section .act-label { text-align: center; }
+}

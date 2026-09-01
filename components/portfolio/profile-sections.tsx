@@ -9,12 +9,8 @@ export function About() {
         <h2 id="about-title">I care about how things work — and how they feel to use.</h2>
       </div>
       <div className="about-copy">
-        <p>
-          I am {profile.name}, a Frontend Developer with a background in Information Technology. I enjoy turning requirements into responsive interfaces that are clear, practical, and connected to real product behavior.
-        </p>
-        <p>
-          I am also exploring UI/UX to understand how structure, interaction, and visual decisions can make a product easier to use. Frontend development is my current direction; design learning is how I keep improving the way I build.
-        </p>
+        <p>I am {profile.name}, a Frontend Developer with a background in Information Technology. I turn requirements into responsive interfaces connected to real product behavior.</p>
+        <p>I am exploring UI/UX to improve how I shape structure, interaction, and visual decisions. Frontend development is my current direction.</p>
         <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">
           More about my journey <span aria-hidden="true">↗</span>
         </a>
@@ -22,8 +18,8 @@ export function About() {
       <div className="toolkit-block">
         <div className="section-heading compact-heading">
           <p className="eyebrow">Tools I use</p>
-          <h2 id="skills-title">A practical toolkit for building on the web.</h2>
-          <p>The tools change with the problem. The focus stays on clear structure, responsive behavior, and working interfaces.</p>
+          <h2 id="skills-title">A practical toolkit for the web.</h2>
+          <p className="section-supporting-copy">The tools change with the problem. The focus stays on clear structure and working interfaces.</p>
         </div>
         <div className="skills-list" aria-labelledby="skills-title">
           {skills.map((skill, index) => (
@@ -35,12 +31,4 @@ export function About() {
       </div>
     </section>
   );
-}
-
-export function Experience() {
-  return null;
-}
-
-export function Skills() {
-  return null;
 }

@@ -1,11 +1,11 @@
 import { experience } from "@/lib/portfolio-data";
 
 const steps = [
-  ["01 / Understand", "Start with the requirement, the user, and the information the interface must make clear."],
-  ["02 / Shape", "Turn the flow into a responsive structure with readable hierarchy and reusable interface sections."],
-  ["03 / Connect", "Bring the interface together with APIs, realtime data, maps, or computer-vision features when the project requires them."],
-  ["04 / Refine", "Test the experience across screen sizes, fix rough edges, and improve the details that affect usability."],
-  ["05 / Ship", "Keep the code organized, document what remains, and move the project toward a usable release."],
+  ["01 / Understand", "Clarify the requirement, user, and information."],
+  ["02 / Shape", "Turn the flow into a responsive structure."],
+  ["03 / Connect", "Integrate APIs, maps, realtime data, or vision features."],
+  ["04 / Refine", "Test across screens and remove rough edges."],
+  ["05 / Ship", "Keep the code clear and move toward release."],
 ];
 
 export function HowIBuild() {
@@ -15,7 +15,7 @@ export function HowIBuild() {
       <div className="section-heading process-heading">
         <p className="eyebrow">A working process</p>
         <h2 id="process-title">From a rough idea to a working interface.</h2>
-        <p>I break a problem into a clear user flow, shape the interface around that flow, then build and refine the experience through code.</p>
+        <p className="section-supporting-copy">A simple loop: understand the problem, build the flow, then refine what people use.</p>
       </div>
       <div className="process-list">
         {steps.map(([title, description]) => (
@@ -36,7 +36,6 @@ export function HowIBuild() {
           <p className="experience-summary">{experience.summary}</p>
         </div>
       </div>
-      <p className="process-note">The goal is not to add motion for its own sake. The goal is to make the interface easier to understand and use.</p>
     </section>
   );
 }

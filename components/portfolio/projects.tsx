@@ -54,9 +54,9 @@ function ProjectDetails({ project }: { project: Project }) {
   );
 }
 
-export function Projects({ projects }: ProjectsProps) {
-  const featured = projects.find((project) => project.featured) ?? projects[0];
-  const selected = projects.filter((project) => project.slug !== featured.slug);
+export function Projects({ projects: projectList }: ProjectsProps) {
+  const featured = projectList.find((project) => project.featured) ?? projectList[0];
+  const selected = projectList.filter((project) => project.slug !== featured.slug);
 
   return (
     <section id="projects" className="section work-section cinematic-act" aria-labelledby="work-title">
@@ -64,7 +64,7 @@ export function Projects({ projects }: ProjectsProps) {
       <div className="section-heading">
         <p className="eyebrow">Selected projects</p>
         <h2 id="work-title">Things I built to make ideas work.</h2>
-        <p>A focused selection of frontend, realtime, and computer-vision work. Each project shows a different way I turn requirements into a working experience.</p>
+        <p className="section-supporting-copy">Frontend, realtime, and computer-vision work — shown through the problems, roles, and tools behind each project.</p>
       </div>
       <article className="featured-project project-card">
         <ProjectVisual project={featured} featured />
@@ -72,7 +72,7 @@ export function Projects({ projects }: ProjectsProps) {
       </article>
       <div className="selected-projects-heading">
         <p className="eyebrow">More work</p>
-        <p>Explore the rest of the project set.</p>
+        <p>Two supporting projects.</p>
       </div>
       <div className="project-list">
         {selected.map((project) => (
