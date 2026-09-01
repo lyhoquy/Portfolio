@@ -61,10 +61,8 @@ export function Projects({ projects: projectList }: ProjectsProps) {
   return (
     <section id="projects" className="section work-section cinematic-act" aria-labelledby="work-title">
       <div className="act-label">ACT 02 / THE WORK</div>
-      <div className="section-heading">
-        <p className="eyebrow">Selected projects</p>
+      <div className="section-heading section-heading-work">
         <h2 id="work-title">Things I built to make ideas work.</h2>
-        <p className="section-supporting-copy">Frontend, realtime, and computer-vision work — shown through the problems, roles, and tools behind each project.</p>
       </div>
       <article className="featured-project project-card">
         <ProjectVisual project={featured} featured />

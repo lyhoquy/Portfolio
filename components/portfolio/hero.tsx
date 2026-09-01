@@ -28,7 +28,7 @@ export function Hero() {
       <div className="act-label">ACT 01 / THE SKY</div>
       <div className="hero-intro">
         <div className="hero-copy-block">
-          <p className="eyebrow">{profile.name} · {profile.role}</p>
+          <p className="identity-line">{profile.name} · {profile.role}</p>
           <h1 id="hero-title">
             I build interfaces
             <span>that connect ideas to real use.</span>

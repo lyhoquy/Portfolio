@@ -13,9 +13,7 @@ export function HowIBuild() {
     <section id="how-i-build" className="section process-section cinematic-act" aria-labelledby="process-title">
       <div className="act-label">ACT 03 / HOW I BUILD</div>
       <div className="section-heading process-heading">
-        <p className="eyebrow">A working process</p>
         <h2 id="process-title">From a rough idea to a working interface.</h2>
-        <p className="section-supporting-copy">A simple loop: understand the problem, build the flow, then refine what people use.</p>
       </div>
       <div className="process-list">
         {steps.map(([title, description]) => (

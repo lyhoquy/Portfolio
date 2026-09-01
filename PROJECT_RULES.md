@@ -118,7 +118,44 @@ Visual quality must not come at the cost of unnecessary page weight or poor inte
 
 ---
 
-## 7. Visual Identity
+## 7. Editorial Hierarchy and Variable Composition
+
+The portfolio uses a consistent design language with variable composition. Every Act must not be forced into the same repeated section-header template.
+
+### Text hierarchy
+
+The following semantic hierarchy applies whenever these elements are used:
+
+* **ACT label** is narrative metadata and a chapter marker. It must remain visually quiet and must never compete with the main content.
+* **Section label or eyebrow** is optional contextual metadata. Use it only when it communicates information that is not already communicated by the ACT label, headline, or content below.
+* **Main headline** is the primary visual statement of the section. It should be the dominant typographic element.
+* **Supporting copy** is optional. Include it only when it provides information that cannot be understood from the headline or the content below.
+
+### Composition rules
+
+Do not treat the following as a mandatory pattern:
+
+```text
+ACT label + section eyebrow + main headline + supporting description
+```
+
+Each Act should be composed according to its content. Before adding a text layer, ask:
+
+1. What is the single primary visual message?
+2. What information is merely contextual?
+3. What information is already communicated by the content below?
+4. Does this text compete with the actual work?
+5. Can the idea be communicated with fewer hierarchy levels?
+
+The design should be quiet, intentional, typographic, cinematic, and editorial. It must remain a professional frontend developer portfolio rather than becoming a generic SaaS landing page, a generic developer template, or an anime fan website.
+
+Do not delete approved content merely to simplify implementation. Instead, establish a clear visual distinction between primary content, contextual metadata, supporting explanation, and factual project information. Do not invent replacement copy or add decorative text to fill a layout.
+
+The presence or absence of imagery must not determine whether hierarchy is clear. Images may provide visual anchors, but typography, spacing, and content order must communicate the structure on their own.
+
+---
+
+## 8. Visual Identity
 
 The final visual system has not yet been fully locked unless explicitly documented elsewhere.
 
@@ -138,7 +175,7 @@ Temporary implementation values must be clearly identifiable as provisional.
 
 ---
 
-## 8. Content Rules
+## 9. Content Rules
 
 Content must be based on information explicitly provided by the owner or approved project material.
 
@@ -163,7 +200,7 @@ Do not turn assumptions into facts.
 
 ---
 
-## 9. Case Study Rules
+## 10. Case Study Rules
 
 Case studies should emphasize the process and reasoning behind the work.
 
@@ -189,7 +226,7 @@ A visually impressive case study with fabricated evidence is worse than an incom
 
 ---
 
-## 10. Information Architecture
+## 11. Information Architecture
 
 The exact final information architecture should be treated as a product decision.
 
@@ -207,7 +244,7 @@ Avoid creating routes merely because the framework makes them easy to create.
 
 ---
 
-## 11. UX Interaction Rules
+## 12. UX Interaction Rules
 
 Interactions should have a clear purpose.
 
@@ -232,7 +269,7 @@ Respect user preferences such as reduced motion.
 
 ---
 
-## 12. Responsive Design
+## 13. Responsive Design
 
 The portfolio must work across:
 
@@ -258,7 +295,7 @@ according to available space.
 
 ---
 
-## 13. Content Status
+## 14. Content Status
 
 Content should be treated as one of three states:
 
@@ -278,7 +315,7 @@ Agents must not silently convert Draft or Missing content into Approved content.
 
 ---
 
-## 14. Reference Material
+## 15. Reference Material
 
 Historical portfolio material may be stored in:
 
@@ -292,7 +329,7 @@ When migrating old content, preserve factual accuracy and distinguish historical
 
 ---
 
-## 15. Decision Authority
+## 16. Decision Authority
 
 The human owner has final authority over:
 
@@ -308,7 +345,7 @@ Agents may recommend alternatives, but recommendations must be presented as reco
 
 ---
 
-## 16. Change Rule
+## 17. Change Rule
 
 If a requested change conflicts with this document:
 
