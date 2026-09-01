@@ -31,6 +31,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 a { color: inherit; text-decoration: none; }
 a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
@@ -378,3 +379,55 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
   .hero { background: var(--sky); }
   .process-step { border-bottom-color: rgb(41 72 92 / 24%); }
 }
+
+
+/* Full-bleed act fills: content stays constrained while each atmosphere reaches the viewport edges. */
+.cinematic-act {
+  isolation: isolate;
+}
+.cinematic-act::after {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--act-fill, transparent);
+  content: "";
+  pointer-events: none;
+}
+.hero { --act-fill: var(--sky); background: transparent; }
+.work-section { --act-fill: var(--cloud); background: transparent; }
+.process-section { --act-fill: var(--mist); background: transparent; }
+.about-section { --act-fill: var(--cloud); background: transparent; }
+.contact-section { --act-fill: var(--night); background: transparent; }
+.contact-section::before { z-index: -1; }
+
+
+/* Use an expanding shadow for reliable full-bleed fills inside the constrained page shell. */
+.cinematic-act::after { display: none; }
+.cinematic-act {
+  box-shadow: 0 0 0 100vmax var(--act-fill, transparent);
+  clip-path: inset(0 -100vmax);
+}
+
+
+/* Final full-bleed layering: viewport background behind the constrained section content. */
+.cinematic-act {
+  box-shadow: none;
+  clip-path: none;
+}
+.cinematic-act::after {
+  display: block;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--act-fill, transparent);
+}
+.cinematic-act > * { position: relative; z-index: 1; }
+.contact-section::before { z-index: 1; }
+.contact-section > * { z-index: 2; }
