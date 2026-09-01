@@ -46,15 +46,15 @@ export const projects: Project[] = [
     number: "03",
     slug: "personal-portfolio",
     title: "Personal Portfolio Website",
-    meta: "Personal project · 2026",
+    meta: "Supporting personal project · 2026",
     description:
-      "A portfolio platform in progress for presenting frontend work, technical decisions, and a growing interest in UI/UX.",
+      "The portfolio platform currently in progress for presenting frontend work, technical decisions, and a growing interest in UI/UX.",
     problem:
       "Create a clear and credible place to present frontend work, project evidence, and a path to contact.",
     role: "Designed and developed the portfolio structure and responsive interface with a backend-ready content boundary.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     href: "https://github.com/lyhoquy/Portfolio",
-    status: "Work in progress",
+    status: "Supporting / work in progress",
   },
 ];
 

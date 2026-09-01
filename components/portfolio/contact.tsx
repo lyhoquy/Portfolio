@@ -16,7 +16,7 @@ export function Contact() {
         <a href={`mailto:${profile.email}`}>Email</a>
         <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
         <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-        <span className="resume-note">Resume file will be connected by backend.</span>
+        <span className="resume-note">Resume PDF / add locally when ready.</span>
       </div>
     </section>
   );

@@ -204,3 +204,17 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
   .case-study-grid aside { margin-bottom: 70px; }
   .case-study-content { gap: 65px; }
 }
+
+
+.mobile-nav { display: none; }
+@media (max-width: 760px) {
+  .site-nav { position: relative; }
+  .mobile-nav { display: block; margin-left: auto; margin-right: 14px; }
+  .mobile-nav-toggle { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); padding: 7px 9px; background: transparent; color: var(--ink); font: 10px var(--font-geist-mono), monospace; text-transform: uppercase; }
+  .mobile-nav-toggle:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .mobile-nav-menu { position: absolute; top: 62px; right: 0; z-index: 10; display: grid; min-width: 190px; border: 1px solid var(--ink); background: var(--paper); box-shadow: 6px 6px 0 var(--ink); }
+  .mobile-nav-menu a { display: flex; justify-content: space-between; padding: 14px 15px; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .mobile-nav-menu a:last-child { border-bottom: 0; }
+  .mobile-nav-menu a:hover { background: var(--accent); }
+  .nav-resume { font-size: 11px; }
+}

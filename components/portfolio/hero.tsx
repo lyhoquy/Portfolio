@@ -1,4 +1,5 @@
 import { profile } from "@/lib/portfolio-data";
+import { MobileNav } from "@/components/portfolio/mobile-nav";
 
 export function SiteNav() {
   return (
@@ -13,6 +14,7 @@ export function SiteNav() {
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </div>
+      <MobileNav />
       <a className="nav-resume" href="#resume">
         Resume <span aria-hidden="true">↗</span>
       </a>
@@ -31,8 +33,8 @@ export function Hero() {
             <span>built for real use.</span>
           </h1>
           <p className="hero-lede">
-            I build responsive web experiences that turn clear product goals into
-            useful, accessible interfaces.
+            I build responsive interfaces that connect frontend experiences with
+            realtime systems and computer-vision features.
           </p>
           <div className="hero-actions" aria-label="Hero actions">
             <a className="button button-primary" href="#work">
