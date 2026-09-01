@@ -29,7 +29,7 @@ export function About() {
 
 export function Experience() {
   return (
-    <section className="section experience-section" aria-labelledby="experience-title">
+    <section id="experience" className="section experience-section" aria-labelledby="experience-title">
       <div className="section-heading compact-heading">
         <p className="eyebrow">Experience</p>
         <h2 id="experience-title">Learning by shipping.</h2>

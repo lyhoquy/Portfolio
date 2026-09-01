@@ -7,6 +7,7 @@ import { projects } from "@/lib/portfolio-data";
 export default function Home() {
   return (
     <main>
+      <a className="skip-link" href="#top">Skip to content</a>
       <SiteNav />
       <div id="top" className="page-shell">
         <Hero />
