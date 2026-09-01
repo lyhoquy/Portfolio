@@ -37,9 +37,14 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 .nav-resume { border-bottom: 1px solid var(--ink); padding-bottom: 3px; }
 
 .hero { min-height: 680px; display: flex; flex-direction: column; justify-content: center; padding: 90px 0 70px; border-bottom: 1px solid var(--line); }
+.hero-intro { display: grid; grid-template-columns: minmax(0, 1fr) 210px; align-items: end; gap: 50px; }
+.hero-copy-block { min-width: 0; }
 .eyebrow { margin: 0 0 25px; color: var(--muted); font: 11px/1.4 var(--font-geist-mono), monospace; letter-spacing: .11em; text-transform: uppercase; }
 .hero h1 { max-width: 900px; margin: 0; font-size: clamp(52px, 9vw, 126px); font-weight: 500; letter-spacing: -.085em; line-height: .91; }
 .hero h1 span { display: block; color: var(--muted); }
+.hero-avatar { position: relative; width: 210px; height: 260px; margin: 0 0 8px; overflow: hidden; background: var(--panel); }
+.hero-avatar img { object-fit: cover; object-position: 52% 35%; filter: saturate(.82); }
+.hero-avatar figcaption { position: absolute; right: 10px; bottom: 9px; left: 10px; color: white; font: 10px var(--font-geist-mono), monospace; letter-spacing: .04em; text-shadow: 0 1px 5px rgb(0 0 0 / 70%); }
 .hero-bottom { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-top: 75px; }
 .hero-copy { max-width: 390px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.55; }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -57,10 +62,14 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 .section-heading h2, .about-intro h2, .contact-section h2 { margin: 0; font-size: clamp(35px, 5vw, 66px); font-weight: 500; letter-spacing: -.065em; line-height: .98; }
 .section-heading > p:last-child { max-width: 250px; margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 .project-list { display: grid; gap: 18px; }
-.project-card { display: grid; grid-template-columns: 34% 1fr; min-height: 330px; border: 1px solid var(--line); background: rgba(255,255,255,.18); }
+.project-card { display: grid; grid-template-columns: 34% 1fr; min-height: 330px; border: 1px solid var(--line); background: rgb(255 255 255 / 18%); transition: border-color .2s ease, transform .2s ease; }
+.project-card:hover { border-color: var(--ink); transform: translateY(-2px); }
 .project-visual { position: relative; display: flex; align-items: flex-start; justify-content: space-between; min-height: 260px; padding: 20px; overflow: hidden; background: var(--panel); font: 11px var(--font-geist-mono), monospace; }
+.project-number, .visual-arrow, .visual-label { position: relative; z-index: 1; }
 .visual-grid { position: absolute; inset: 20px; opacity: .6; background: linear-gradient(90deg, transparent 49.7%, var(--line) 50%, transparent 50.3%), linear-gradient(transparent 49.7%, var(--line) 50%, transparent 50.3%); background-size: 42px 42px; }
-.visual-arrow { position: relative; align-self: flex-end; font-size: 25px; }
+.visual-label { position: absolute; top: 50%; left: 50%; display: flex; align-items: center; gap: 8px; transform: translate(-50%, -50%); color: var(--muted); white-space: nowrap; }
+.visual-label-dot { width: 6px; height: 6px; border: 1px solid var(--muted); border-radius: 50%; }
+.visual-arrow { align-self: flex-end; font-size: 25px; }
 .project-content { display: flex; flex-direction: column; justify-content: space-between; padding: 28px 30px 25px; }
 .project-header { display: flex; justify-content: space-between; gap: 20px; }
 .project-meta { margin: 0 0 12px; color: var(--muted); font: 10px var(--font-geist-mono), monospace; text-transform: uppercase; letter-spacing: .08em; }
@@ -96,6 +105,9 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
   .site-nav, .page-shell, .site-footer { width: min(100% - 32px, 560px); }
   .nav-links { display: none; }
   .hero { min-height: 650px; padding-top: 70px; }
+  .hero-intro { grid-template-columns: minmax(0, 1fr) 112px; align-items: start; gap: 20px; }
+  .hero-avatar { width: 112px; height: 150px; margin-top: 28px; }
+  .hero-avatar figcaption { font-size: 8px; }
   .hero-bottom, .section-heading, .about-section, .experience-row { display: block; }
   .hero-bottom { margin-top: 50px; }
   .hero-actions { margin-top: 28px; }

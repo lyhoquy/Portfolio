@@ -18,10 +18,14 @@ export function Projects({ projects }: ProjectsProps) {
       <div className="project-list">
         {projects.map((project) => (
           <article className="project-card" key={project.number}>
-            <div className="project-visual" aria-hidden="true">
-              <span>{project.number}</span>
-              <div className="visual-grid" />
-              <span className="visual-arrow">↗</span>
+            <div className="project-visual" aria-label={`${project.title} visual preview pending`}>
+              <span className="project-number">{project.number}</span>
+              <div className="visual-grid" aria-hidden="true" />
+              <div className="visual-label">
+                <span className="visual-label-dot" aria-hidden="true" />
+                Preview pending
+              </div>
+              <span className="visual-arrow" aria-hidden="true">↗</span>
             </div>
             <div className="project-content">
               <div className="project-header">

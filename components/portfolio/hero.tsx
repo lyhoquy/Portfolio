@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { profile } from "@/lib/portfolio-data";
 
 export function SiteNav() {
@@ -22,17 +23,31 @@ export function SiteNav() {
 export function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <p className="eyebrow">{profile.role} · {profile.name}</p>
-      <h1 id="hero-title">
-        I build interfaces
-        <span>that work and feel right.</span>
-      </h1>
+      <div className="hero-intro">
+        <div className="hero-copy-block">
+          <p className="eyebrow">{profile.role} · {profile.name}</p>
+          <h1 id="hero-title">
+            I build interfaces
+            <span>that work and feel right.</span>
+          </h1>
+        </div>
+        <figure className="hero-avatar">
+          <Image
+            src="/images/ly-ho-avatar.webp"
+            alt="Ly Ho speaking at a presentation"
+            fill
+            priority
+            sizes="(max-width: 760px) 42vw, 260px"
+          />
+          <figcaption>Ly Ho / 2026</figcaption>
+        </figure>
+      </div>
       <div className="hero-bottom">
         <p className="hero-copy">
           Frontend Developer building responsive and functional web experiences,
           with a growing interest in UI/UX.
         </p>
-        <div className="hero-actions">
+        <div className="hero-actions" aria-label="Hero actions">
           <a className="button button-primary" href="#work">
             View Projects <span aria-hidden="true">↓</span>
           </a>
