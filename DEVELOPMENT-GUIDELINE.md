@@ -453,6 +453,8 @@ Prefer framework-provided security mechanisms over custom implementations.
 
 Keep commits focused.
 
+Do not push commits or other changes to any remote branch unless Ly explicitly requests the push in the current task. Local commits and local branch updates are allowed when needed for the task, but remote publication requires a separate explicit request.
+
 Recommended commit structure:
 
 ```text
