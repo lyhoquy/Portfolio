@@ -431,3 +431,30 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 .cinematic-act > * { position: relative; z-index: 1; }
 .contact-section::before { z-index: 1; }
 .contact-section > * { z-index: 2; }
+
+
+/* Structural fix: sections own the viewport width; their content keeps the 1180px editorial inset. */
+.page-shell {
+  width: 100%;
+}
+.cinematic-act {
+  width: 100%;
+  padding-right: max(24px, calc((100vw - 1180px) / 2));
+  padding-left: max(24px, calc((100vw - 1180px) / 2));
+  background: var(--act-fill, var(--paper));
+}
+.cinematic-act::after {
+  display: none;
+}
+.hero { --act-fill: var(--sky); }
+.work-section { --act-fill: var(--cloud); }
+.process-section { --act-fill: var(--mist); }
+.about-section { --act-fill: var(--cloud); }
+.contact-section { --act-fill: var(--night); }
+
+@media (max-width: 760px) {
+  .cinematic-act {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
