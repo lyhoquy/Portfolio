@@ -196,7 +196,7 @@ export const projects: Project[] = [
     number: "03",
     slug: "personal-portfolio",
     title: "Personal Portfolio Website",
-    meta: "Supporting personal project · 2026",
+    meta: "Personal project · 2026",
     description:
       "A deployed portfolio that presents frontend work, technical skills, experience, and project evidence in a clearer structure than a resume alone.",
     problem:
@@ -223,7 +223,7 @@ export const projects: Project[] = [
       {
         decision: "Make project evidence easier to scan.",
         reason: "Recruiters should be able to verify the work before reading every technical detail.",
-        implementation: "Featured work appears before supporting projects, with direct links to screenshots, case studies, and source code.",
+        implementation: "Each project entry provides direct links to screenshots, case studies, and source code.",
       },
       {
         decision: "Keep navigation available on smaller screens.",
@@ -234,7 +234,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "React", "TypeScript", "CSS", "Git", "GitHub"],
     href: "https://github.com/lyhoquy/Portfolio",
     liveDemo: "https://lyhoquy.github.io/Portfolio/",
-    status: "Supporting / work in progress",
+    status: "Work in progress",
     overview:
       "The portfolio uses a component-based structure, reusable project data, responsive CSS, dynamic case-study routes, static assets, and a deployment workflow backed by Git.",
     approach: [

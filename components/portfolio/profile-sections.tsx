@@ -3,7 +3,7 @@ import { profile } from "@/lib/portfolio-data";
 export function About() {
   return (
     <section id="about" className="section about-section cinematic-act" aria-labelledby="about-title">
-      <div className="act-label">ACT 04 / ABOUT</div>
+      <div className="act-marker" aria-label="Act 04, About"><span>04</span><span>About</span></div>
       <div className="about-intro">
         <h2 id="about-title">I care about how things work — and how they feel to use.</h2>
       </div>

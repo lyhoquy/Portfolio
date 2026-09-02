@@ -11,7 +11,7 @@ const steps = [
 export function HowIBuild() {
   return (
     <section id="how-i-build" className="section process-section cinematic-act" aria-labelledby="process-title">
-      <div className="act-label">ACT 03 / HOW I BUILD</div>
+      <div className="act-marker" aria-label="Act 03, How I Build"><span>03</span><span>How I Build</span></div>
       <div className="section-heading process-heading">
         <h2 id="process-title">From a rough idea to a working interface.</h2>
       </div>
@@ -30,7 +30,7 @@ export function HowIBuild() {
         </div>
         <div>
           <p className="experience-title">{experience.title}</p>
-          <p className="muted">{experience.company} · {experience.period}</p>
+          <p className="muted"><span>{experience.company}</span><span>{experience.period}</span></p>
           <p className="experience-summary">{experience.summary}</p>
         </div>
       </div>

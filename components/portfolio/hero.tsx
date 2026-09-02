@@ -30,7 +30,7 @@ export function SiteNav() {
       </div>
       <MobileNav />
       <a className="nav-resume" href="#resume">
-        Resume <span aria-hidden="true">↗</span>
+        Resume
       </a>
     </nav>
   );
@@ -39,10 +39,10 @@ export function SiteNav() {
 export function Hero() {
   return (
     <section className="hero cinematic-act" aria-labelledby="hero-title">
-      <div className="act-label">ACT 01 / THE SKY</div>
+      <div className="act-marker" aria-label="Act 01, The Sky"><span>01</span><span>The Sky</span></div>
       <div className="hero-intro">
         <div className="hero-copy-block">
-          <p className="identity-line">{profile.name} · {profile.role}</p>
+          <p className="identity-line"><span>{profile.name}</span><span>{profile.role}</span></p>
           <h1 id="hero-title">
             I build interfaces
             <span>that connect ideas to real use.</span>
@@ -52,7 +52,7 @@ export function Hero() {
               See my work <span aria-hidden="true">↓</span>
             </a>
             <a className="button button-secondary" href="#resume">
-              View resume <span aria-hidden="true">↗</span>
+              View resume
             </a>
           </div>
         </div>
@@ -64,7 +64,7 @@ export function Hero() {
       </div>
       <div className="hero-note">
         <span className="status-dot" aria-hidden="true" />
-        React · TypeScript · realtime interfaces
+        <span>React</span><span>TypeScript</span><span>Realtime interfaces</span>
       </div>
     </section>
   );

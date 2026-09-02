@@ -21,20 +21,24 @@ function ProjectVisual({ project }: { project: Project }) {
         <span className="visual-label-dot" aria-hidden="true" />
         {image ? "Open project detail" : "Project preview / add locally"}
       </div>
-      <span className="visual-arrow" aria-hidden="true">↗</span>
     </div>
   );
 }
 
 function ProjectDetails({ project }: { project: Project }) {
+  const metaParts = project.meta.split(" · ");
+  const statusParts = project.status.split(" · ");
+
   return (
     <div className="project-content">
       <div className="project-header">
         <div>
-          <p className="project-meta">{project.meta}</p>
+          <p className="project-meta">
+            {metaParts.map((part, index) => <span key={part}>{index === 0 ? "TYPE" : "YEAR"}<strong>{part}</strong></span>)}
+          </p>
           <h3>{project.title}</h3>
         </div>
-        <span className="project-status">{project.status}</span>
+        <span className="project-status"><small>STATUS</small>{statusParts.map((part) => <strong key={part}>{part}</strong>)}</span>
       </div>
       <p className="project-description">{project.description}</p>
       <p className="project-role"><strong>My role</strong> {project.role}</p>
@@ -43,7 +47,7 @@ function ProjectDetails({ project }: { project: Project }) {
       </div>
       <div className="project-actions">
         <Link className="text-link" href={`/projects/${project.slug}`}>
-          Open project detail <span aria-hidden="true">↗</span>
+          Open project detail
         </Link>
         <a className="text-link text-link-muted" href={project.href} target="_blank" rel="noreferrer">
           View source code <span aria-hidden="true">↗</span>
@@ -63,10 +67,10 @@ export function Projects({ projects: projectList }: ProjectsProps) {
 
   return (
     <section id="projects" className="section work-section cinematic-act" aria-labelledby="work-title">
-      <div className="act-label">ACT 02 / THE WORK</div>
+      <div className="act-marker" aria-label="Act 02, The Work"><span>02</span><span>The Work</span></div>
       <div className="section-heading section-heading-work">
         <h2 id="work-title">The work.</h2>
-        <p className="section-supporting-copy">A rotating selection of interfaces, systems, and experiments.</p>
+        <p className="section-supporting-copy">A selection of interfaces, systems, and experiments.</p>
       </div>
       <div className="project-gallery" aria-roledescription="carousel" aria-label="Project gallery">
         <div className="project-gallery-stage" aria-live="polite">
