@@ -1,4 +1,4 @@
-import { profile, skills } from "@/lib/portfolio-data";
+import { profile } from "@/lib/portfolio-data";
 
 export function About() {
   return (
@@ -13,19 +13,6 @@ export function About() {
         <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">
           More about my journey <span aria-hidden="true">↗</span>
         </a>
-      </div>
-      <div className="toolkit-block">
-        <div className="section-heading compact-heading">
-          <p className="eyebrow">Tools I use</p>
-          <h3 id="skills-title">A practical toolkit for the web.</h3>
-        </div>
-        <div className="skills-list" aria-labelledby="skills-title">
-          {skills.map((skill, index) => (
-            <span className="skill-item" key={skill}>
-              <span className="skill-index">{String(index + 1).padStart(2, "0")}</span>{skill}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );

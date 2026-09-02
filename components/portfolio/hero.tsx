@@ -47,9 +47,6 @@ export function Hero() {
             I build interfaces
             <span>that connect ideas to real use.</span>
           </h1>
-          <p className="hero-lede">
-            Responsive interfaces connected to realtime systems and computer&#8209;vision features.
-          </p>
           <div className="hero-actions" aria-label="Hero actions">
             <a className="button button-primary" href="#projects">
               See my work <span aria-hidden="true">↓</span>
@@ -60,7 +57,7 @@ export function Hero() {
           </div>
         </div>
         <figure className="hero-placeholder">
-          <Image src="/avatar.png" alt="Portrait of Ly Ho" fill sizes="(max-width: 760px) 100vw, 260px" />
+          <Image src="/avatar.png" alt="Portrait of Ly Ho" fill sizes="(max-width: 760px) 100vw, 330px" />
           <span className="placeholder-kicker">Portrait / Ly Ho</span>
           <span className="placeholder-role">Frontend<br />Developer</span>
         </figure>

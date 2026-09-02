@@ -1,39 +1,27 @@
-import Link from "next/link";
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import type { Project } from "@/lib/portfolio-data";
 
 type ProjectsProps = {
   projects: Project[];
 };
 
-function ProjectVisual({ project, featured = false }: { project: Project; featured?: boolean }) {
+function ProjectVisual({ project }: { project: Project }) {
   const image = project.images?.[0];
 
   return (
-    <div className={`project-visual ${featured ? "project-visual-featured" : ""}`} role="img" aria-label={image?.alt ?? `${project.title} preview placeholder`}>
-      {image ? <Image className="project-image" src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 100vw, 34vw" /> : null}
+    <div className="project-visual project-visual-gallery" role="img" aria-label={image?.alt ?? `${project.title} preview placeholder`}>
+      {image ? <Image className="project-image" src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 100vw, 48vw" priority /> : null}
       <span className="project-number">{project.number}</span>
       <div className="visual-grid" aria-hidden="true" />
       <div className={`visual-label${image ? " visual-label-overlay" : ""}`}>
         <span className="visual-label-dot" aria-hidden="true" />
-        {image ? "View project evidence" : "Project preview / add locally"}
+        {image ? "Open project detail" : "Project preview / add locally"}
       </div>
       <span className="visual-arrow" aria-hidden="true">↗</span>
-    </div>
-  );
-}
-
-function ProjectActions({ project }: { project: Project }) {
-  const isSupporting = project.slug === "personal-portfolio";
-
-  return (
-    <div className="project-actions">
-      <Link className="text-link" href={`/projects/${project.slug}`}>
-        {isSupporting ? "Project notes" : "Read case study"} <span aria-hidden="true">↗</span>
-      </Link>
-      <a className="text-link text-link-muted" href={project.href} target="_blank" rel="noreferrer">
-        View source code <span aria-hidden="true">↗</span>
-      </a>
     </div>
   );
 }
@@ -53,36 +41,64 @@ function ProjectDetails({ project }: { project: Project }) {
       <div className="tag-list" aria-label={`${project.title} technologies`}>
         {project.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}
       </div>
-      <ProjectActions project={project} />
+      <div className="project-actions">
+        <Link className="text-link" href={`/projects/${project.slug}`}>
+          Open project detail <span aria-hidden="true">↗</span>
+        </Link>
+        <a className="text-link text-link-muted" href={project.href} target="_blank" rel="noreferrer">
+          View source code <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </div>
   );
 }
 
 export function Projects({ projects: projectList }: ProjectsProps) {
-  const featured = projectList.find((project) => project.featured) ?? projectList[0];
-  const selected = projectList.filter((project) => project.slug !== featured.slug);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeProject = projectList[activeIndex] ?? projectList[0];
+
+  const changeProject = (direction: number) => {
+    setActiveIndex((current) => (current + direction + projectList.length) % projectList.length);
+  };
 
   return (
     <section id="projects" className="section work-section cinematic-act" aria-labelledby="work-title">
       <div className="act-label">ACT 02 / THE WORK</div>
       <div className="section-heading section-heading-work">
-        <h2 id="work-title">Things I built to make ideas work.</h2>
+        <h2 id="work-title">The work.</h2>
+        <p className="section-supporting-copy">A rotating selection of interfaces, systems, and experiments.</p>
       </div>
-      <article className="featured-project project-card">
-        <ProjectVisual project={featured} featured />
-        <ProjectDetails project={featured} />
-      </article>
-      <div className="selected-projects-heading">
-        <p className="eyebrow">More work</p>
-        <p>Two supporting projects.</p>
-      </div>
-      <div className="project-list">
-        {selected.map((project) => (
-          <article className={`project-card ${project.slug === "personal-portfolio" ? "project-card-supporting" : ""}`} key={project.number}>
-            <ProjectVisual project={project} />
-            <ProjectDetails project={project} />
-          </article>
-        ))}
+      <div className="project-gallery" aria-roledescription="carousel" aria-label="Project gallery">
+        <div className="project-gallery-stage" aria-live="polite">
+          <ProjectVisual project={activeProject} />
+          <ProjectDetails project={activeProject} />
+        </div>
+        <div className="project-gallery-controls">
+          <div className="project-gallery-index" aria-label={`Project ${activeIndex + 1} of ${projectList.length}`}>
+            <span>{String(activeIndex + 1).padStart(2, "0")}</span>
+            <span className="gallery-rule" aria-hidden="true" />
+            <span>{String(projectList.length).padStart(2, "0")}</span>
+          </div>
+          <div className="project-gallery-buttons">
+            <button type="button" onClick={() => changeProject(-1)} aria-label="Previous project">← <span>Previous</span></button>
+            <button type="button" onClick={() => changeProject(1)} aria-label="Next project"><span>Next</span> →</button>
+          </div>
+        </div>
+        <div className="project-gallery-menu" role="tablist" aria-label="Choose a project">
+          {projectList.map((project, index) => (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={index === activeIndex}
+              className={index === activeIndex ? "is-active" : ""}
+              key={project.slug}
+              onClick={() => setActiveIndex(index)}
+            >
+              <span>{project.number}</span>
+              <span>{project.title}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </section>
   );
