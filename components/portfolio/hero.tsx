@@ -1,9 +1,22 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { MobileNav } from "@/components/portfolio/mobile-nav";
 import { profile } from "@/lib/portfolio-data";
 
 export function SiteNav() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateScrollState = () => setScrolled(window.scrollY > 24);
+
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrollState);
+  }, []);
+
   return (
-    <nav className="site-nav" aria-label="Primary navigation">
+    <nav className={`site-nav${scrolled ? " site-nav-scrolled" : ""}`} aria-label="Primary navigation">
       <a className="brand" href="#top" aria-label={`${profile.brand} home`}>
         <span className="brand-mark">K</span>
         <span>{profile.brand}</span>
@@ -33,9 +46,6 @@ export function Hero() {
             I build interfaces
             <span>that connect ideas to real use.</span>
           </h1>
-          <p className="hero-lede">
-            I build responsive web interfaces and connect them to the systems that make products useful — from realtime traffic information to computer-vision features.
-          </p>
           <div className="hero-actions" aria-label="Hero actions">
             <a className="button button-primary" href="#projects">
               See my work <span aria-hidden="true">↓</span>
