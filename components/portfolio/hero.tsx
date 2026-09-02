@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { MobileNav } from "@/components/portfolio/mobile-nav";
 import { profile } from "@/lib/portfolio-data";
 
@@ -58,11 +59,11 @@ export function Hero() {
             </a>
           </div>
         </div>
-        <div className="hero-placeholder" role="img" aria-label="Portrait placeholder for Ly Ho">
-          <span className="placeholder-kicker">Portrait / replace locally</span>
-          <strong>LY<br />HO</strong>
+        <figure className="hero-placeholder">
+          <Image src="/avatar.png" alt="Portrait of Ly Ho" fill sizes="(max-width: 760px) 100vw, 260px" />
+          <span className="placeholder-kicker">Portrait / Ly Ho</span>
           <span className="placeholder-role">Frontend<br />Developer</span>
-        </div>
+        </figure>
       </div>
       <div className="hero-note">
         <span className="status-dot" aria-hidden="true" />

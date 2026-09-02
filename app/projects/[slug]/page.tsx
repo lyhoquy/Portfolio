@@ -47,6 +47,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <a className="button button-primary" href={project.href} target="_blank" rel="noreferrer">
               View source code <span aria-hidden="true">↗</span>
             </a>
+            {project.liveDemo ? <a className="button" href={project.liveDemo} target="_blank" rel="noreferrer">View live demo <span aria-hidden="true">↗</span></a> : null}
             <span className="project-status">{project.status}</span>
           </div>
         </header>
@@ -66,16 +67,38 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <p>{project.problem}</p>
             </section>
 
+            <section aria-labelledby="role-title">
+              <p className="eyebrow">02 / Role</p>
+              <h2 id="role-title">What I was responsible for.</h2>
+              <ul className="case-study-list">
+                {project.responsibilities.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </section>
+
             {hasCaseStudy ? (
               <>
                 <section aria-labelledby="overview-title">
-                  <p className="eyebrow">02 / Overview</p>
+                  <p className="eyebrow">03 / Overview</p>
                   <h2 id="overview-title">From input to useful action.</h2>
                   <p>{project.overview}</p>
                 </section>
 
+                <section aria-labelledby="ux-title">
+                  <p className="eyebrow">04 / UX reasoning</p>
+                  <h2 id="ux-title">How the interface supports the user.</h2>
+                  <div className="case-study-decisions">
+                    {project.uxDecisions.map((item) => (
+                      <article className="case-study-decision" key={item.decision}>
+                        <h3>{item.decision}</h3>
+                        <p><strong>Why it mattered.</strong> {item.reason}</p>
+                        <p><strong>What I implemented.</strong> {item.implementation}</p>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+
                 <section className="case-study-gallery" aria-labelledby="gallery-title">
-                  <p className="eyebrow">03 / Project evidence</p>
+                  <p className="eyebrow">05 / Project evidence</p>
                   <h2 id="gallery-title">What the prototype shows.</h2>
                   <div className="case-study-images">
                     {project.images?.map((image, index) => (
@@ -90,7 +113,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </section>
 
                 <section aria-labelledby="approach-title">
-                  <p className="eyebrow">04 / Implementation</p>
+                  <p className="eyebrow">06 / Development</p>
                   <h2 id="approach-title">How it was connected.</h2>
                   <ul className="case-study-list">
                     {project.approach?.map((item) => <li key={item}>{item}</li>)}
@@ -99,7 +122,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
                 {project.metrics?.length ? (
                   <section aria-labelledby="metrics-title">
-                    <p className="eyebrow">05 / Results</p>
+                    <p className="eyebrow">07 / Results</p>
                     <h2 id="metrics-title">Measured in the project environment.</h2>
                     <div className="case-study-metrics">
                       {project.metrics.map((metric) => (
@@ -113,25 +136,58 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </section>
                 ) : null}
 
+                {project.outcome ? (
+                  <section aria-labelledby="outcome-title">
+                    <p className="eyebrow">08 / Outcome</p>
+                    <h2 id="outcome-title">What the project demonstrates.</h2>
+                    <p>{project.outcome}</p>
+                  </section>
+                ) : null}
+
                 {project.limitations?.length ? (
                   <section aria-labelledby="limitations-title">
-                    <p className="eyebrow">06 / Scope</p>
+                    <p className="eyebrow">09 / Scope</p>
                     <h2 id="limitations-title">What remains contextual.</h2>
                     <ul className="case-study-list">
                       {project.limitations.map((item) => <li key={item}>{item}</li>)}
                     </ul>
                   </section>
                 ) : null}
+
+                {project.reflection ? (
+                  <section aria-labelledby="reflection-title">
+                    <p className="eyebrow">10 / Reflection</p>
+                    <h2 id="reflection-title">What I learned.</h2>
+                    <p>{project.reflection}</p>
+                  </section>
+                ) : null}
               </>
             ) : (
-              <section aria-labelledby="development-title">
-                <p className="eyebrow">02 / Evidence</p>
-                <h2 id="development-title">Development notes</h2>
-                <p>This project page will be expanded with verified screenshots, implementation decisions, responsive behavior, and outcome notes.</p>
-                <div className="case-study-placeholder" role="img" aria-label="Project screenshot placeholder">
-                  <span>Project screenshots<br />will be added here</span>
-                </div>
-              </section>
+              <>
+                <section aria-labelledby="ux-title">
+                  <p className="eyebrow">03 / UX reasoning</p>
+                  <h2 id="ux-title">How the interface supports the visitor.</h2>
+                  <div className="case-study-decisions">
+                    {project.uxDecisions.map((item) => (
+                      <article className="case-study-decision" key={item.decision}>
+                        <h3>{item.decision}</h3>
+                        <p><strong>Why it mattered.</strong> {item.reason}</p>
+                        <p><strong>What I implemented.</strong> {item.implementation}</p>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+                <section aria-labelledby="development-title">
+                  <p className="eyebrow">04 / Development</p>
+                  <h2 id="development-title">How it was built.</h2>
+                  <p>{project.overview}</p>
+                  <div className="case-study-placeholder" role="img" aria-label="Project screenshot placeholder">
+                    <span>Project screenshots<br />will be added here</span>
+                  </div>
+                </section>
+                {project.outcome ? <section aria-labelledby="outcome-title"><p className="eyebrow">05 / Outcome</p><h2 id="outcome-title">What the project demonstrates.</h2><p>{project.outcome}</p></section> : null}
+                {project.reflection ? <section aria-labelledby="reflection-title"><p className="eyebrow">06 / Reflection</p><h2 id="reflection-title">What I learned.</h2><p>{project.reflection}</p></section> : null}
+              </>
             )}
           </div>
         </div>
