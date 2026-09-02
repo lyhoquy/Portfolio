@@ -119,8 +119,23 @@ Visual quality must not come at the cost of unnecessary page weight or poor inte
 ---
 
 ## 7. Editorial Hierarchy and Variable Composition
-
 The portfolio uses a consistent design language with variable composition. Every Act must not be forced into the same repeated section-header template.
+
+### Fixed five-Act narrative
+
+The portfolio uses five fixed Acts because they map to the real visitor questions and the actual content of the portfolio:
+
+| Act | Content and role in the visitor flow |
+| --- | --- |
+| The Sky | Identity: who Ly Ho is and what he does. |
+| The Work | Evidence: the graduation project, Vietnamese food recognition project, and portfolio. |
+| How I Build | Process: how Ly turns requirements into responsive, connected interfaces. |
+| About | Context: Information Technology background, frontend direction, and developing UX interest. |
+| Contact | Action: email, GitHub, LinkedIn, and Resume. |
+
+The five Acts support the intended flow: **Understand → Verify → Explore → Contact**. They must not be replaced with arbitrary landing-page sections such as Services, Testimonials, or Pricing.
+
+Act markers are chapter markers, not eyebrows. Display them as `01  The Sky`, `02  The Work`, `03  How I Build`, `04  About`, and `05  Contact`. Act markers must not use ALL-CAPS, mono typography, excessive letter spacing, or a dash. The Act marker remains quieter than the section headline.
 
 ### Text hierarchy
 
@@ -153,25 +168,40 @@ Do not delete approved content merely to simplify implementation. Instead, estab
 
 The presence or absence of imagery must not determine whether hierarchy is clear. Images may provide visual anchors, but typography, spacing, and content order must communicate the structure on their own.
 
+### Navigation arrows
+
+The `↗` marker means that an action leaves the current portfolio context. Use it only for external destinations or a PDF that opens in a new browser tab, including GitHub, LinkedIn, external live demos, external repositories, and the Resume PDF. Do not use `↗` for internal anchors, internal case-study routes, Previous/Next controls, or `mailto:` contact actions. Internal actions use no arrow unless another symbol communicates a specific behavior, such as `↓` for scrolling to Projects.
+
+### Metadata formatting
+
+Do not join unrelated metadata with a middle dot. Do not use patterns such as `A · B · C`, `Ly Ho · Frontend Developer`, or `Year · status`. Use separate lines, label/value pairs, alignment, spacing, borders, or independent technology tags. Technology stacks must be rendered as independent tags rather than one middle-dot string.
+
 ---
 
 ## 8. Visual Identity
 
-The final visual system has not yet been fully locked unless explicitly documented elsewhere.
+The approved visual direction is an atmospheric editorial system inspired by the contrast and weather mood associated with *Tenki no Ko*. The internal project name **After the Rain** is a descriptive name created for this direction, not the official name of a reference website, film design system, or external brand.
 
-Therefore agents must not arbitrarily establish:
+### Approved color system
 
-* brand colors;
-* typography;
-* logo treatment;
-* visual motifs;
-* gradients;
-* illustration styles;
-* animation language.
+| Hex | Role | Use |
+| --- | --- | --- |
+| `#081827` | Night Ink | Primary text, Contact surface, scrolled navigation, deep contrast areas. |
+| `#123B62` | Deep Sky | Hero and identity surface. |
+| `#F7FAFB` | Cloud Paper | Main reading surface for Work and About. |
+| `#D4E5E9` | Rain Mist | How I Build surface and transition field. |
+| `#66818F` | Rain Text | Supporting copy, captions, and metadata. |
+| `#F3C969` | Sunlight Accent | Primary CTA, active gallery state, technology tags, and evidence markers. |
 
-When a visual decision has not yet been approved, treat it as unresolved rather than inventing a permanent design system.
+Do not use white text on Cloud Paper or Rain Mist. Do not use Sunlight Accent as an undifferentiated large background. Gradients and glows are permitted only when they create atmospheric depth in Hero or Contact and must not replace hierarchy.
 
-Temporary implementation values must be clearly identifiable as provisional.
+### Approved type system
+
+* **DM Serif Display** is the headline typeface. It is used for Hero, major section headlines, project detail titles, and Contact because its editorial contrast distinguishes the portfolio from generic developer templates while supporting the cinematic narrative.
+* **Geist Sans** is the body typeface. It is used for descriptions, responsibilities, About copy, process explanations, navigation, and buttons because it remains technical, compact, and easy for recruiters to scan.
+* **Geist Mono** is reserved for system-like metadata such as project status, year labels, technology tags, counters, and captions. It must not be used to render Act markers as ALL-CAPS eyebrows.
+
+This color and type system is approved and must not be treated as provisional or replaced without the owner's explicit approval.
 
 ---
 
@@ -353,3 +383,18 @@ If a requested change conflicts with this document:
 2. Explain the affected rule.
 3. Ask for clarification or approval.
 4. Do not silently override the rule.
+
+---
+
+## 18. Official AI-Generated Design Tell Reference
+
+The following six points are the official reference for reviewing and avoiding AI-generated design tells. Agents must use this section as the source of truth and must not rely on historical chat context to recover the list.
+
+1. Nền cream ấm + serif tương phản cao + accent cam đất
+2. Nền gần đen + 1 accent xanh chanh/đỏ rực
+3. Layout broadsheet: viền chỉ mảnh, bo góc = 0, cột dày kiểu báo
+4. Bộ "SaaS-card": mọi khối bo góc giống nhau, cùng 1 shadow xám mờ, gradient trang trí
+5. Chrome mặc định: eyebrow ALL-CAPS cách chữ, meta nối bằng dấu chấm giữa
+   (A · B · C), nhãn kiểu "WORD — fragment", đen tuyền giả (#0B0B0B/#111),
+   font mono cho label nhỏ, mũi tên → sau mọi link
+6. Đánh số 01/02/03 cho nội dung không thực sự là chuỗi tuần tự
