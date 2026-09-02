@@ -46,6 +46,9 @@ export function Hero() {
             I build interfaces
             <span>that connect ideas to real use.</span>
           </h1>
+          <p className="hero-lede">
+            Responsive interfaces connected to realtime systems and computer&#8209;vision features.
+          </p>
           <div className="hero-actions" aria-label="Hero actions">
             <a className="button button-primary" href="#projects">
               See my work <span aria-hidden="true">↓</span>

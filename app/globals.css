@@ -62,7 +62,9 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 .button-primary:hover { background: #363830; }
 .button-secondary:hover { background: var(--accent); }
 .hero-note { display: flex; align-items: center; gap: 9px; margin-top: 65px; color: var(--muted); font: 11px var(--font-geist-mono), monospace; }
+.hero-lede { max-width: 480px; margin: 20px 0 0; font-size: 15px; line-height: 1.55; }
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #9fc52e; }
+
 
 .section { padding: 125px 0; border-bottom: 1px solid var(--line); }
 .section-heading { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 30px; align-items: start; margin-bottom: 62px; }
