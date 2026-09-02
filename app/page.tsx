@@ -9,7 +9,9 @@ export default function Home() {
   return (
     <main>
       <a className="skip-link" href="#top">Skip to content</a>
-      <SiteNav />
+      <header className="site-header">
+        <SiteNav />
+      </header>
       <div id="top" className="page-shell">
         <Hero />
         <Projects projects={projects} />
