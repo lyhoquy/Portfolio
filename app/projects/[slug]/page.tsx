@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "@/lib/portfolio-data";
@@ -26,6 +27,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   if (!project) notFound();
 
+  const hasCaseStudy = Boolean(project.overview && project.images?.length);
+
   return (
     <main className="case-study-page">
       <nav className="case-study-nav" aria-label="Case study navigation">
@@ -33,7 +36,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <span className="brand-mark">K</span>
           <span>Kiandas</span>
         </Link>
-        <Link className="text-link" href="/#work">Back to projects <span aria-hidden="true">↗</span></Link>
+        <Link className="text-link" href="/#projects">Back to projects <span aria-hidden="true">↗</span></Link>
       </nav>
       <article className="case-study-shell">
         <header className="case-study-header">
@@ -62,24 +65,74 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <h2 id="problem-title">The problem</h2>
               <p>{project.problem}</p>
             </section>
-            <section aria-labelledby="development-title">
-              <p className="eyebrow">02 / Evidence</p>
-              <h2 id="development-title">Development notes</h2>
-              <p>This case study is being expanded with verified screenshots, implementation decisions, responsive behavior, and outcome notes.</p>
-              <div className="case-study-placeholder" role="img" aria-label="Project screenshot placeholder">
-                <span>Project screenshots<br />will be added here</span>
-              </div>
-            </section>
-            <section aria-labelledby="next-title">
-              <p className="eyebrow">03 / Next update</p>
-              <h2 id="next-title">What remains to document</h2>
-              <ul className="case-study-list">
-                <li>Verified screenshots and captions.</li>
-                <li>Specific implementation decisions and constraints.</li>
-                <li>Live demo link, when available.</li>
-                <li>Outcome or learning supported by project evidence.</li>
-              </ul>
-            </section>
+
+            {hasCaseStudy ? (
+              <>
+                <section aria-labelledby="overview-title">
+                  <p className="eyebrow">02 / Overview</p>
+                  <h2 id="overview-title">From input to useful action.</h2>
+                  <p>{project.overview}</p>
+                </section>
+
+                <section className="case-study-gallery" aria-labelledby="gallery-title">
+                  <p className="eyebrow">03 / Project evidence</p>
+                  <h2 id="gallery-title">What the prototype shows.</h2>
+                  <div className="case-study-images">
+                    {project.images?.map((image, index) => (
+                      <figure className={index === 0 ? "case-study-image-featured" : ""} key={image.src}>
+                        <div className="case-study-image-frame">
+                          <Image src={image.src} alt={image.alt} fill sizes={index === 0 ? "(max-width: 760px) 100vw, 650px" : "(max-width: 760px) 100vw, 320px"} />
+                        </div>
+                        <figcaption>{image.caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </section>
+
+                <section aria-labelledby="approach-title">
+                  <p className="eyebrow">04 / Implementation</p>
+                  <h2 id="approach-title">How it was connected.</h2>
+                  <ul className="case-study-list">
+                    {project.approach?.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                </section>
+
+                {project.metrics?.length ? (
+                  <section aria-labelledby="metrics-title">
+                    <p className="eyebrow">05 / Results</p>
+                    <h2 id="metrics-title">Measured in the project environment.</h2>
+                    <div className="case-study-metrics">
+                      {project.metrics.map((metric) => (
+                        <div className="case-study-metric" key={metric.label}>
+                          <strong>{metric.value}</strong>
+                          <span>{metric.label}</span>
+                          <small>{metric.context}</small>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                ) : null}
+
+                {project.limitations?.length ? (
+                  <section aria-labelledby="limitations-title">
+                    <p className="eyebrow">06 / Scope</p>
+                    <h2 id="limitations-title">What remains contextual.</h2>
+                    <ul className="case-study-list">
+                      {project.limitations.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </section>
+                ) : null}
+              </>
+            ) : (
+              <section aria-labelledby="development-title">
+                <p className="eyebrow">02 / Evidence</p>
+                <h2 id="development-title">Development notes</h2>
+                <p>This project page will be expanded with verified screenshots, implementation decisions, responsive behavior, and outcome notes.</p>
+                <div className="case-study-placeholder" role="img" aria-label="Project screenshot placeholder">
+                  <span>Project screenshots<br />will be added here</span>
+                </div>
+              </section>
+            )}
           </div>
         </div>
       </article>

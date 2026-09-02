@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/lib/portfolio-data";
 
 type ProjectsProps = {
@@ -6,13 +7,16 @@ type ProjectsProps = {
 };
 
 function ProjectVisual({ project, featured = false }: { project: Project; featured?: boolean }) {
+  const image = project.images?.[0];
+
   return (
-    <div className={`project-visual ${featured ? "project-visual-featured" : ""}`} role="img" aria-label={`${project.title} preview placeholder`}>
+    <div className={`project-visual ${featured ? "project-visual-featured" : ""}`} role="img" aria-label={image?.alt ?? `${project.title} preview placeholder`}>
+      {image ? <Image className="project-image" src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 100vw, 34vw" /> : null}
       <span className="project-number">{project.number}</span>
       <div className="visual-grid" aria-hidden="true" />
-      <div className="visual-label">
+      <div className={`visual-label${image ? " visual-label-overlay" : ""}`}>
         <span className="visual-label-dot" aria-hidden="true" />
-        Project preview / add locally
+        {image ? "View project evidence" : "Project preview / add locally"}
       </div>
       <span className="visual-arrow" aria-hidden="true">↗</span>
     </div>
