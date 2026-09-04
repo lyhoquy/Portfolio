@@ -2,6 +2,7 @@ import { About, Experience, Skills } from "@/components/portfolio/profile-sectio
 import { Contact, Footer } from "@/components/portfolio/contact";
 import { Hero, SiteNav } from "@/components/portfolio/hero";
 import { Projects } from "@/components/portfolio/projects";
+import { WeatherMoments } from "@/components/portfolio/weather-moments";
 import { projects } from "@/lib/portfolio-data";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <SiteNav />
       <div id="top" className="page-shell">
         <Hero />
+        <WeatherMoments />
         <Projects projects={projects} />
         <About />
         <Experience />
